@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyUpApp</string>
+    <string name="loading_data">Loading Data</string>
 </resources>
