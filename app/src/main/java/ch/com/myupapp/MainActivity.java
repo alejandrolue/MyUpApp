@@ -11,8 +11,17 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+
+import com.android.volley.Response;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final int TRIGGER_AUTO_COMPLETE = 100;
@@ -21,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private SuggestService suggest;
     private boolean isSelectedFromList;
     private Handler handler;
+
+    public static final String SEARCH_URL = "https://csci571-trading-platform.wl.r.appspot.com/api/search/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_menu, menu);
 
-        // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -102,6 +112,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
         return true;
+    }
+
+    private void sendApiCall(String text) {
+        ApiCall.make(this, text, SEARCH_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //parsing logic, please change it as per your requirement
+                List<String> stringList = new ArrayList<>();
+                try {
+                    JSONObject responseObject = new JSONObject(response);
+                    JSONArray array = responseObject.getJSONArray("results");
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject row = array.getJSONObject(i);
+
+                        stringList.add(row.getString("ticker") + "-" + row.getString("name"));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                suggest.setData(stringList);
+                suggest.notifyDataSetChanged();
+            }
+        }, error -> Log.i("error", "error in search http " + error));
     }
 
     public void redirectToDetails(String ticker) {
