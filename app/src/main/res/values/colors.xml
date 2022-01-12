@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#FF004E4D</color>
     <color name="progressBar">#00FFFC</color>
+    <color name="section_header">#006765</color>
 </resources>
