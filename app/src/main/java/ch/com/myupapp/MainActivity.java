@@ -5,6 +5,7 @@ import androidx.appcompat.widget.SearchView;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -101,5 +102,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         return true;
+    }
+
+    public void redirectToDetails(String ticker) {
+        Intent intent = new Intent(this, DetailsActivity.class);
+        startActivity(intent);
     }
 }
