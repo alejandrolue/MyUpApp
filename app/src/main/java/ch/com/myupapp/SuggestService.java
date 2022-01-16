@@ -1,7 +1,5 @@
 package ch.com.myupapp;
 
-
-
 import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
