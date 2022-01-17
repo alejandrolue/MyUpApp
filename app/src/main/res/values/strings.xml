@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyUpApp</string>
     <string name="loading_data">Loading Data</string>
+    <string name="search_bar">Search Bar</string>
+    <string name="add_stock">Add Stock</string>
+    <string name="search_stock_by_short">Search Stock by Tag</string>
+    <string name="add">Add</string>
 </resources>
