@@ -3,15 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.3851851851851852" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/drawable/ic_keyboard_arrow_right.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.21458333333333332" />
-        <entry key="app/src/main/res/layout/activity_add.xml" value="0.2015625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1875" />
+        <entry key="app/src/main/res/layout/activity_add.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_details_stock.xml" value="0.1983695652173913" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16909576796970768" />
         <entry key="app/src/main/res/layout/fav_sec_header.xml" value="0.27788806939769517" />
         <entry key="app/src/main/res/layout/search_menu.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/stock_item_info.xml" value="0.355721027448747" />
+        <entry key="app/src/main/res/layout/up_app_widget.xml" value="0.3014246690444791" />
+        <entry key="app/src/main/res/xml/app_widget_info.xml" value="0.1" />
       </map>
     </option>
   </component>
